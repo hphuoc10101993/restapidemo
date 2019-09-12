@@ -28,10 +28,10 @@ jobs:
             - '.venv'
             - '/usr/local/bin'
             - '/usr/local/lib/python3.6/site-packages'
-    deploy:
-      machine:
-          enabled: true
-      working_directory: ~/restapidemo
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/restapidemo
       steps:
         - checkout
         - run:
