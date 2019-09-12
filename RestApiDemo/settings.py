@@ -25,7 +25,7 @@ SECRET_KEY = '(n15ptom#$pk2q^(w#2c@#sjlv=rt580l4k6j@y!j15cab804$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['demo-restapi-v1.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'demo-restapi-v1.herokuapp.com']
 
 
 # Application definition

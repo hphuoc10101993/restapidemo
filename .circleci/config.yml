@@ -25,7 +25,7 @@ jobs:
       - run:
           command: |
             python manage.py migrate
-            python manage.py createsuperuser --username admin --password admin --email 'testing@gmail.com'
+            python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')"
       - save_cache:
           key: deps10-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
