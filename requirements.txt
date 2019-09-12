@@ -1,6 +1,7 @@
 certifi==2019.6.16
 chardet==3.0.4
 defusedxml==0.6.0
+dj-config-url==0.1.1
 Django==2.2.5
 django-allauth==0.40.0
 django-filter==2.2.0
