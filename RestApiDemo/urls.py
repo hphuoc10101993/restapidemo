@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 from RestApiDemo import settings
@@ -24,3 +25,5 @@ urlpatterns = [
     path('', include('app.api.urls')),
     path(r'accounts/', include('allauth.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
