@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(n15ptom#$pk2q^(w#2c@#sjlv=rt580l4k6j@y!j15cab804$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'demo-restapi-v1.herokuapp.com']
 
@@ -230,12 +230,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles/')
+if not os.path.exists(os.path.join(BASE_DIR, 'static')):
+    os.mkdir(os.path.join(BASE_DIR, 'static'))
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static/'),
+)
