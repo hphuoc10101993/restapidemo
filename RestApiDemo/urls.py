@@ -19,10 +19,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 from RestApiDemo import settings
+from app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.api.urls')),
+    path('api/', include('app.api.urls')),
+    path('', index),
     path(r'accounts/', include('allauth.urls')),
 ]
 
